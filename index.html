@@ -36,10 +36,13 @@ h1 {letter-spacing: 6px}
 
 <!-- Photo Grid -->
 <div id="main" class="w3-row-padding w3-grayscale" style="margin-bottom:128px; margin-top:10px; padding:5rem; padding-top:0rem; padding-bottom:0rem; text-align: center; font-size: 20px; color: black">
-  Some say music is what colors sound like. Our goal is to bridge the auditory and visual senses using XR development and techniques.
-  We wish to enhance existing audio visualizer apps by having Virtual Reality in mind. 
-  We will make use of space and depth in conjunction with beat detection and spectrum analysis data for all kinds of creative possibilities for colors, lights, and shapes around you.  
-
+  The availability of 3D shape data significantly increased over the past years due to advances in 3D capturing sensors and 3D modeling tools such as Blender. 
+  This naturally leads to a growing interest in the high-level understanding of 3D shapes. S
+  pecifically the part segmentation of 3D shapes gives valuable insights into the characteristics of an object by dividing it into its meaningful parts.
+  Several deep learning frameworks exist to perform a part segmentation of 3D objects. 
+  One popular example is MeshCNN [1], which works directly on the edges of 3D mesh representations. 
+  To train MeshCNN it is necessary to provide a manual ground truth segmentation that contains all edge labels ordered by their edge ID.
+  Within this page, I will show how I performed a manual part segmentation within Blender 2.82 and used it as a ground truth for training MeshCNN.
   <img id="firstImage" src="https://cdn.discordapp.com/attachments/941210710619332658/960626473226629130/unknown.png" height="360" alt="animationImg"><br>
   
 </div>
