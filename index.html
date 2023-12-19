@@ -1,145 +1,138 @@
 <html><head>
-<title>CMSC838B Final</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1 {font-family: "Raleway", Arial, sans-serif}
-h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px; margin: auto}
-#main {margin: auto}
+    <title>CMSC838B Final</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1 {font-family: "Raleway", Arial, sans-serif}
+    h1 {letter-spacing: 6px}
+    .w3-row-padding img {margin-bottom: 12px; margin: auto}
+    #main {margin: auto}
+    
+    </style>
+    <script src="chrome-extension://nngceckbapebfimnlniiiahkandclblb/content/fido2/page-script.js"></script></head>
+    <body>
+    
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-content" style="max-width:1500px">
+    
+    <!-- Header -->
+    <header class="w3-panel w3-center" style="padding:20px 16px; padding-bottom: 10px;">
+      <h1 class="w3-xlarge">Differentiable Geometry Processing with MeshCNN</h1>
+      <h1>CMSC838B Final Report</h1>
+      <h6>Sathwik Yanamaddi</h6>
+      
+      <div class="w3-padding-32">
+        <div class="w3-bar w3-border">
+          <a href="#" class="w3-bar-item w3-button">Home</a>
+          <a href="#" class="w3-bar-item w3-button w3-light-grey">Proposal</a>
+          <a href="#" class="w3-bar-item w3-button">Progress</a>
+          <a href="#" class="w3-bar-item w3-button w3-hide-small">Conclusion</a>
+        </div>
+      </div>
+    </header>
+    
 
-</style>
-<script src="chrome-extension://nngceckbapebfimnlniiiahkandclblb/content/fido2/page-script.js"></script></head>
-<body>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
-
-<!-- Header -->
-<header class="w3-panel w3-center w3-opacity" style="padding:20px 16px; padding-bottom: 10px;">
-  <h1 class="w3-xlarge">Differentiable Geometry Processing with MeshCNN</h1>
-  <h1>CMSC838B Final Report</h1>
-  <h6>Sathwik Yanamaddi</h6>
-  
-  <div class="w3-padding-32">
-    <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-light-grey">Proposal</a>
-      <a href="#" class="w3-bar-item w3-button">Progress</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small">Conclusion</a>
+    <!-- Photo Grid -->
+    <div id="main" class="w3-row-padding" style="margin-bottom:64px; margin-top:10px; padding:5rem; padding-top:0rem; padding-bottom:0rem; text-align: center; font-size: 18px; color: black">
+        The availability of 3D shape data significantly increased over the past years due to advances in 3D capturing sensors and 3D modeling tools such as Blender. 
+        This naturally leads to a growing interest in the high-level understanding of 3D shapes. Specifically, the part segmentation of 3D shapes gives valuable insights into the characteristics of an object by dividing it into its semantic regions.
+        Several deep learning frameworks exist to perform a part segmentation of 3D objects. 
+        One popular example is MeshCNN [1], which works directly on the edges of 3D mesh representations. This geometric approach is highly promising for real world applications, but MeshCNN is limited
+        in its functionality due to its bias towards a balanced class distribution & limited input size. Can we rework MeshCNN for tasks involving imbalanced datasets and fine-grained segmentation results?
+        <img id="firstImage" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186750014039535768/Screenshot_2023-12-19_at_14.19.07.png" height="360" alt="animationImg"><br>
+        <p style="font-size: 16px; margin-top: 10px;">MeshCNN [1] Human shape segmentation results on the dataset of [Maronetal. 2017].</p>
     </div>
-  </div>
-</header>
+    
+    <div class="w3-row-padding" style="margin-bottom:128px; margin-top:0px; padding:1rem; padding-top: 0rem;">
+      <p>
+        <a href="https://docs.google.com/presentation/d/1g8c2LHSYHvNg-C7vn3mQn53jrKYGHFcYZuBLUiNZwhY/edit?usp=sharing"><h5>Link to Student Lecture Presentation Slides</h5></a>
+        <a href="https://docs.google.com/presentation/d/1HAJZQqVLgCtPrBtD0LOAJ2niiPikxLq-/edit?usp=sharing&ouid=114152032939714538845&rtpof=true&sd=true"><h5>Link to Proposal Presentation Slides</h5></a>
+        <a href="https://docs.google.com/presentation/d/18nOloyzerxXcKcBJCRebpSJAxannnsnv1Y-4HCaQmro/edit#slide=id.g2a7c61f57ab_0_10"><h5>Link to Final Presentation Slides</h5></a>
+      </p>
+      <h4>Motivation &amp; Background</h4>
+      Deep learning with Neural Networks for geometric processing has demonstrated remarkable capabilities, leveraging the power of different 3D representations to push performance metrics to new heights. One of these implementations is MeshCNN, which leverages novel mesh convolution, mesh pooling, and mesh unpooling operations to deep learn on the intrinsic features of 3D triangle meshes and perform classification, segementation, and regression tasks. Specifically, part segmentation of 3D shapes can give valuable insights into an object by dividing it into more semantic regions which can prove useful in applications such as medical imaging, robotics, and autonomous driving where there may be latent features. However, in the MeshCNN work, the segmentation is only demonstrated on small, simple structures and on a fairly balanced dataset. So my goal was to see if we can rework MeshCNN for tasks involving imbalanced datasets and fine-grained segmentation results.
+      <br>
+      <Strong><h4>Dataset</h4></Strong>
+      To do this, I chose to evaluate MeshCNNs performance on an Aneurysm risk dataset [2], which hosts 94 models of 3D vessels. When doctors are tasked with analyzing the presence of an aneurysm, it's much easier for them to do so with 3D models where the edges are more explicit, rather than with 2D images. 
+      The majority of Intracranial Aneruysms (IAs) remain unruptured do not cause any symptoms. However, an IA rupture leads to a life-threatening type of stroke that carries a high mortality rate. Several treatment methods for unruptured aneurysms exist. Nevertheless, they all carry their own risk, which has to be weighed against the cumulative aneurysm rupture risk over a patient's lifetime.
+      
+      Therefore, it is crucial to rely on fast, consistent, and exact measurements,ideally computed automatically in 3D.It would be incredibly beneficial to have a model that can automatically segment the aneurysm from the rest of the vessel, and this is where MeshCNN comes in. The vessels are segmented by 4 class labels. In the figure below, the red area is the aneurysm, the brown area is the inlet, the blue areas are bifurcations, and the green areas are the rest of the blood vessel. With MeshCNN, we can reduce and analyze these models while retaining more detailed patterns and properties of the vessel. 
+      The results of current state-of-the-art Networks on this dataset can be found in IntrA [2]. 
 
-<!-- Photo Grid -->
-<div id="main" class="w3-row-padding w3-grayscale" style="margin-bottom:128px; margin-top:10px; padding:5rem; padding-top:0rem; padding-bottom:0rem; text-align: center; font-size: 18px; color: black">
-  The availability of 3D shape data significantly increased over the past years due to advances in 3D capturing sensors and 3D modeling tools such as Blender. 
-  This naturally leads to a growing interest in the high-level understanding of 3D shapes. Specifically, the part segmentation of 3D shapes gives valuable insights into the characteristics of an object by dividing it into its semantic regions.
-  Several deep learning frameworks exist to perform a part segmentation of 3D objects. 
-  One popular example is MeshCNN [1], which works directly on the edges of 3D mesh representations. This geometric approach is highly promising for real world appslications, but MeshCNN is limited
-  in its functionality due to its bias towards a balanced class distribution & limited input size. Can we rework MeshCNN for tasks involving imbalanced datasets and fine-grained segmentation results?
-  <img id="firstImage" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186750014039535768/Screenshot_2023-12-19_at_14.19.07.png" height="360" alt="animationImg"><br>
-  
-</div>
+      <br>
+      <br>
+      <img id="firstImage" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186777682940272711/image.png?ex=65947bd8&is=658206d8&hm=bb609098786179d2451437f83c1988c6e2358081c5c4c7771b7b0ebf3184f525&" height="360" alt="AneurysmExample">
 
-<div class="w3-row-padding w3-grayscale" style="margin-bottom:128px; margin-top:0px; padding:8rem; padding-top: 0rem;">
-  <p>
+      <img id="firstImage" src="https://github.com/intra3d2019/IntrA/raw/master/images/ann_tool.jpg" height="360" alt="AneurysmExample2">
+      <br>
 
-    Differentiable Learning for Geometric Processing
-    <a href="https://docs.google.com/presentation/d/1g8c2LHSYHvNg-C7vn3mQn53jrKYGHFcYZuBLUiNZwhY/edit?usp=sharing"><h5>Link to Student Lecture Presentation Slides</h5></a>
-    <a href="https://docs.google.com/presentation/d/1HAJZQqVLgCtPrBtD0LOAJ2niiPikxLq-/edit?usp=sharing&ouid=114152032939714538845&rtpof=true&sd=true"><h5>Link to Proposal Presentation Slides</h5></a>
-    <a href="https://docs.google.com/presentation/d/18nOloyzerxXcKcBJCRebpSJAxannnsnv1Y-4HCaQmro/edit#slide=id.g2a7c61f57ab_0_10"><h5>Link to Final Presentation Slides</h5></a>
-  </p>
-  <h4>Motivation &amp; Background</h4>
-  We wish to enhance existing audio visualizer apps by 
-  having Virtual Reality in mind. We will make use of space and depth in 
-  conjunction with beat detection and spectrum analysis data for all kinds of creative possibilities 
-  for colors, lights, and shapes around you. 
-  
-  <br>
-  <br>
-  <img id="firstImage" src="https://cdn.discordapp.com/attachments/941210710619332658/960609070421798962/unknown.png" height="360" alt="animationImg"><br>
-  
+      <Strong><h4>Issues for MeshCNN</h4></Strong>
+      Each of the models in the Aneurysm dataset range from 20k to 800k+ edges per mesh, but MeshCNN only runs on up to 20k.
 
-  <h4>State-of-art and new challenges</h4>
-  Implementing the audio visualization as it syncs with the music. <br>
-  Physics of visualizations as it interacts with other objects in the environment <br>
-  Creating an immersive environment where you feel like you are in space with visualizers being everywhere where you look <br>
+      Additionally aneurysms are a very small area of the 3D models, so when MeshCNN is biased towards balaneced datasets, it performs worse on datasets with classes that are highly represented. So in this dataset, the inlet and vessel make up most of the area. 
 
-  <h4>Proposed Tasks</h4>
-  Short-term: Create a room with audio that syncs up with basic visual representation of the audio components. <br>
-  Long-term: Add visual customization in the form of colors, shapes, and audio unmixing. Add more features for quality of life of the application (changing volume, pitch, etc. )
+      Lastly, MeshCNN accounts for the labels of neighbors when computing accuracy, so it allows for a smooth transition between boundaries. Each edge can be counted as correct if either its label or the label of the triangles in its 1-ring is correct. This is an issue for our dataset, especially in the medical field, where we have to be strict about boundaries.
 
+      <Strong><h6>Memory Efficiency</h6></Strong>
+      The original MeshCNN implementation errors during the mesh pooling operation.
+      <br>
+      <img id="firstImage" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186787923929084005/image.png?ex=65948562&is=65821062&hm=58bca615a4677f0d633e76b599d045feb03e226a200994cdf099cf3d037716c8&" height="360" alt="animationImg"><br>
+      
 
-  <h4>Possible ideas that we plan to pursue</h4>
-  Audio unmixing
-  Sound propagation
-  User choice to change type of environments that affects the audio visualization
-  Visualizations forming around the room and possibly bouncing around with physics
-  User can hear different intensities of the audio spectrum depending on where they stand in the room
-  Can change the materials of the room walls to affect sound propagation (open ceiling, concert hall, outdoor concert, etc. ). 
+      This operation is used for decreasing the feature size and increasing receptive field, where MeshCNN learns which edges to collapse based on deep edge features rather than geometric ones.
+      Using the original implementation on the Anerysm Risk input, there were errors during the mesh pooling operation. The model requires a large diagonal matrix to merge edges after pooling. For example, when I had a 40k edge mesh as an input, MeshCNN tried to allocate 55GB of GPU memory in a single request -- it was trying to create a diagonal matrix of size num_edges^2. To fix this I replaced the matrix and relevant functions with a sparse matrix representation, using a pytorch sparse tensor. If we had to downscale the 3D model and input it without this improved memory efficiency, it fades individual characteristics of each model that can be cruicial like patient-specific properties or if we wanted to build on the segmented results.
 
-  <h4>Minimum expected accomplishments by April 25th</h4>
-  Have basic visualizations appear in the environment that syncs with the music <br>
-  Have our “concert” room made with audio able to be played <br>
-  Button to start and stop audio <br>
+      <Strong><h6>Loss Function</h6></Strong>
+      <br>
+      <img id="bruh" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186790493053538334/image.png?ex=659487c7&is=658212c7&hm=4a17e6ac830ef8ffe6f3fc6a73932032329f27e02ad3f33a0f4e0913ee669c08&" height="60" width="600" alt="animationImg"><br>
+      MeshCNN originally uses a Cross-Entropy Loss function but in the Aneurysm dataset, Anerysms and Bifurcations are very underrepresented. So where we are calculating the negative log-likelihood of the predicted class distribution compared to the true class distribution, a class with very few samples is going to bias our predictions. In fact, some times the bifurcations were completely neglected by the network. So to get around this imbalance, I continued using cross-entropy but added weights for each of the classes. To increase the penalization for underrepresented classes I weighted them heavier at 0.3, and to decrease the effect of dominant classes I weighted them lower at 0.2. 
 
-  <h4>Minimum expected accomplishments by mid-May</h4>
-  Have a completely immersiveness concert-space-like environment where visuals of varying colors are being formed, flying about, and eventually fading out. 
-  <br>
-  <a href="https://docs.google.com/presentation/d/1KBAiWTcie7gTj2n8LH6b2Zq73PS-VWj8VVnUkihlWwo/edit?usp=sharing"><h5>Link to Slides</h5></a>
-  
-  <br>
-  <br>
-  <h2>Progress Report</h2>
-  <video width="320" height="240" controls="">
-      <source src="FInalProjectProgressDemo.mp4" type="video/mp4">
-  </video>
-  <br>
-  <br>
-  <h4>What has been done so far : </h4>
-- Created dome in blender <br>
-- Created simple audio visualizer <br>
-- Successfully unmixed multiple songs into four streams (drums/bass/vocals/other) <br>
-- Created objects to represent these in our audio visualizer <br>
-  <br>
-  
-  <h4>Currently working on : </h4>
-- code for having objects represent and react to a certain part of a song <br>
-- letting certain parts of a song be louder when you stand closer to them <br>
-- adding sound synthesis to the materials of the dome and possibly add different environments <br>
-- more visually pleasing features  <br>
-  
-  <h4> Other goals: </h4>
-- Add buttons to mute certain parts of a song so that you can listen to specific parts (ex: ONLY drums or ONLY vocals) 
-  
- <h1> References </h1>
- <p>
-    [1] Hanocka, R., Hertz, A., Fish, N., Giryes, R., Fleishman, S., Cohen-Or, D., 2019. Meshcnn: a network with an edge. ACM Transactionson Graphics (TOG) 38, 1–12
- </p>
-  
-</div>
+      <Strong><h6>Accuracy Metrics</h6></Strong>
+      <br>
+        Since we want to strictly penalize when boundaries are incorrect, I used Intersection over Union [3].
+        <br>
+        <img id="bruh" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186794523364433920/image.png?ex=65948b87&is=65821687&hm=a860315ed4d3eec651c1d2cfbaa93f44e739d37bc0bdcb3c7d102dbacbea9048"  width="600" alt="animationImg"><br>
 
- 
-  
-  
-  
-  
-  
-<!-- End Page Content -->
-</div>
+        This is essentially the overlapping segment between the prediction and the ground truth over the total union area. This captures performance on each class separately and averages them equally.
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
-  <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-  
-</footer>
-</body><style>
+        One thing to note is that the models are not watertight, which is okay, it still runs on MeshCNN and it's probably a feature that is being learned. But this does lead to restricted pooling because the network has less edges it can collapse.
+
+      <h4>Results</h4>
+      These were the results when trained on 66 meshes, validated on 14, and tested on 14. <br>
+      <img id="bruh" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186797585650946190/image.png?ex=65948e62&is=65821962&hm=b7237a37f9f404f95b450361be8a213b91e31ae65938f2ba166fbb4e82d365c7&"  height ="250" width="350" alt="animationImg">
+      <img id="bruh" src="https://cdn.discordapp.com/attachments/1038128245729677382/1186797585948758167/image.png?ex=65948e62&is=65821962&hm=11b59599803192fa4815453bc42dcdea87df4a2dafae2a675765c0ee9e38ada7&"  height="300" width="300" alt="animationImg"><br>
+      The Mean IoU was 63.24% and the IoU for aneurysms was 71.4%, and even with the weighted loss function, the IoU of bifurcations was 37.0 percent, which brings down the mean quite a bit.
+      In comparison to the IoUs of other methods, it does okay for aneurysms but can definitely be further improved with further fine-tuning on the number of pooling layers and target mesh size for each of those and fine-tuning on the loss weights.
+
+      At the end of the day, we have a MeshCNN network with improved memory efficiency, allowing us to process larger inputs up to 170k, we improved performance on imbalanced distributions of edges over a dataset, and overall extended possible applications of MeshCNN.
+
+      <h4>Immediate Future Considerations</h4>
+      In the future, I would test to see if the network performs better on water tight models rather than keeping the holes as features. Additionally, a recent paper has tried dynamically weighted balance loss, and this class imbalance learning could prove useful in our usecase. I would also try other pooling techniques: MeshCNN Fundamentals introduced an improved method where the neighborhood is updated after every pooling operation, and in Neural Subdivision they use an orthogonal approach where they randomly select edge collapses. Lastly, I would try applying a stricter penalization for edges with boundary loss.
+      
+     <h1> References </h1>
+     <p>
+        [1] Hanocka, R., Hertz, A., Fish, N., Giryes, R., Fleishman, S., Cohen-Or, D., 2019. Meshcnn: a network with an edge. ACM Transactionson Graphics (TOG) 38, 1–12
+        <br>
+        [2] Yang, X., Xia, D., Kin, T., & Igarashi, T. (2020). "IntrA: 3D Intracranial Aneurysm Dataset for Deep Learning." In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
+        [3] V7 Labs. "A Guide to Intersection over Union (IoU) in Computer Vision." Available at: https://www.v7labs.com/blog/intersection-over-union-guide.
+     </p>
+
+      
+    </div>
+    
+     
+      
+      
+      
+      
+      
+    <!-- End Page Content -->
+    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">   
+    </footer>
+    </body><style>
