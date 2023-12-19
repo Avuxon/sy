@@ -39,9 +39,8 @@ h1 {letter-spacing: 6px}
   The availability of 3D shape data significantly increased over the past years due to advances in 3D capturing sensors and 3D modeling tools such as Blender. 
   This naturally leads to a growing interest in the high-level understanding of 3D shapes. Specifically, the part segmentation of 3D shapes gives valuable insights into the characteristics of an object by dividing it into its semantic regions.
   Several deep learning frameworks exist to perform a part segmentation of 3D objects. 
-  One popular example is MeshCNN [1], which works directly on the edges of 3D mesh representations. 
-  To train MeshCNN it is necessary to provide a manual ground truth segmentation that contains all edge labels ordered by their edge ID.
-  Within this page, I will show how I performed a manual part segmentation within Blender 2.82 and used it as a ground truth for training MeshCNN.
+  One popular example is MeshCNN [1], which works directly on the edges of 3D mesh representations. This geometric approach is highly promising for real world appslications, but MeshCNN is limited
+  in its functionality due to its bias towards a balanced class distribution & limited input size. Can we rework MeshCNN for tasks involving imbalanced datasets and fine-grained segmentation results?
   <img id="firstImage" src="https://cdn.discordapp.com/attachments/941210710619332658/960626473226629130/unknown.png" height="360" alt="animationImg"><br>
   
 </div>
